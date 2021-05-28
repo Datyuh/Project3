@@ -17,6 +17,6 @@ namespace Project3.AppData
         public double PlannedLaborIntensity { get; set; }
         public double ActualLaborIntensity { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public List<User> Users { get; set; } = new();
     }
 }

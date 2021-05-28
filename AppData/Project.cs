@@ -14,6 +14,6 @@ namespace Project3.AppData
         public DateTime StartProject { get; set; }
         public DateTime EndProject { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public List<User> Users { get; set; } = new();
     }
 }
