@@ -10,6 +10,8 @@ namespace Project3.AppData
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        public string UsersTasks { get; set; }
+
         public double PlannedExecutionPeriod { get; set; }
         public double ActualExecutionPeriod { get; set; }
         public double PlannedLaborIntensity { get; set; }

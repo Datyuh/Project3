@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
 using Project3.AppData;
 
 namespace Project3
@@ -29,15 +28,19 @@ namespace Project3
 
                 UserTask userTask1 = new UserTask
                 {
-                    PlannedExecutionPeriod = 20, ActualExecutionPeriod = 30, PlannedLaborIntensity = 50,
-                    ActualLaborIntensity = 40
+                    PlannedExecutionPeriod = 20, 
+                    ActualExecutionPeriod = 30,
+                    PlannedLaborIntensity = 50,
+                    ActualLaborIntensity = 40, 
+                    UsersTasks = "Сделать в проекте что-то"
                 };
                 UserTask userTask2 = new UserTask
                 {
                     PlannedExecutionPeriod = 30,
                     ActualExecutionPeriod = 20,
                     PlannedLaborIntensity = 40,
-                    ActualLaborIntensity = 60
+                    ActualLaborIntensity = 60,
+                    UsersTasks = "Сделать в проекте что-то"
                 };
                 application.UsersTask.AddRange(userTask1, userTask2);
 
@@ -53,7 +56,6 @@ namespace Project3
                 };
                 application.Users.AddRange(user1, user2);
                 application.SaveChanges();
-                application.Database.CloseConnection();
             }
             Console.WriteLine("Hello World!");
         }
