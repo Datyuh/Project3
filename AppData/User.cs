@@ -1,7 +1,12 @@
-﻿namespace Project3.AppData
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Project3.AppData
 {
     public class User
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string NameUsers { get; set; }
         public double MobilPhoneUsers { get; set; }

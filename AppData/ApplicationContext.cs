@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project3.AppData
 {
@@ -8,7 +9,6 @@ namespace Project3.AppData
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<UserTask> UsersTask { get; set; }
-        public DbSet<Executor> Executors { get; set; }
 
         public ApplicationContext()
         {
@@ -17,7 +17,8 @@ namespace Project3.AppData
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\WorkDataBase.mdf;Integrated Security=True");
+            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["WorkDataBase"].ConnectionString);
         }
+
     }
 }
